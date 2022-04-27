@@ -1,5 +1,6 @@
-rconsoleprint("@@CYAN@@")
-rconsoleprint([[
+function main()
+    rconsoleprint("@@CYAN@@")
+    rconsoleprint([[
                                           
     ____  ____ __________ ___  ____ _____ 
    / __ \/ __ `/ ___/ __ `__ \/ __ `/ __ \
@@ -8,13 +9,35 @@ rconsoleprint([[
 /_/                                       
 
 ]])
-rconsolename("pacman | login")
-rconsoleprint("@@YELLOW@@")
-rconsoleinfo("Awaiting login")
-rconsoleprint("@@WHITE@@ [@@YELLOW@@*@@WHITE@@]@@YELLOW@@Login key: ")
-rconsoleprint("@@WHITE@@")
-key = rconsoleinput("")
-if key == "speed" then
-    rconsoleinfo("Login success, welcome to pacman")
-    rconsolename("pacman | home")
+    rconsolename("pacman | login")
+    if syn then
+        rconsoleinfo("Running on Synapse X")
+    else
+        rconsoleinfo("Running on Krnl, beware of bugs")
+    end
+    rconsoleinfo("Awaiting login")
+    rconsoleprint("[*] Login key: ")
+    rconsoleprint("@@WHITE@@")
+    key = rconsoleinput("")
+    if key == "speed" then
+        rconsoleinfo("Login success, welcome to pacman")
+        rconsolename("pacman | home")
+        -- Set up command bar
+        cmd = rconsoleinput("> ")
+        if cmd == "foo" then
+            rconsoleinfo("bar")
+        end
+    else
+        rconsoleerr("Invalid key.")
+    end
+end
+
+if syn then
+    print("pacman: You are on Synapse. Calling main()")
+    main()
+elseif Krnl then
+    warn("pacman: You are running Krnl. Beware of bugs")
+    main()
+else
+    rconsoleerr("Pacman refused to load, unsupported exploit")
 end
