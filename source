@@ -23,10 +23,12 @@ function main()
         rconsoleinfo("Login success, welcome to pacman")
         rconsolename("pacman | home")
         -- Set up command bar
-        rconsoleprint("> ")
-        cmd = rconsoleinput("")
-        if cmd == "foo" then
-            rconsoleinfo("bar")
+        while true do
+            rconsoleprint("> ")
+            cmd = rconsoleinput("")
+            if cmd == "foo" then
+                rconsoleinfo("bar")
+            end
         end
     else
         rconsoleerr("Invalid key.")
