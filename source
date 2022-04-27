@@ -28,6 +28,15 @@ function main()
             cmd = rconsoleinput("")
             if cmd == "foo" then
                 rconsoleinfo("bar")
+            elseif cmd == "clear" then
+                rconsoleclear()
+            elseif cmd == "exit" then
+                rconsoleinfo("Bye!")
+                rconsolewarn("Do not close the window, it will close your Roblox.")
+                break
+            else
+                rconsoleerr("Unknown command")
+                end
             end
         end
     else
