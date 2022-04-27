@@ -1,2 +1,1 @@
-# pacman-FE
-FE pacman script, by pacman#0001
+You shouldn't be here. Are you looking for https://cubics.tk/pacman-FE/source?
