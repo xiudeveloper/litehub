@@ -16,14 +16,15 @@ function main()
         rconsoleinfo("Running on Krnl, beware of bugs")
     end
     rconsoleinfo("Awaiting login")
-    rconsoleprint("[*] Login key: ")
+    rconsoleprint("[*]: Login key: ")
     rconsoleprint("@@WHITE@@")
     key = rconsoleinput("")
     if key == "speed" then
         rconsoleinfo("Login success, welcome to pacman")
         rconsolename("pacman | home")
         -- Set up command bar
-        cmd = rconsoleinput("> ")
+        rconsoleprint("> ")
+        cmd = rconsoleinput("")
         if cmd == "foo" then
             rconsoleinfo("bar")
         end
