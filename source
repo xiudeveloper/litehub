@@ -19,26 +19,12 @@ function main()
     rconsoleprint("[*]: Login key: ")
     rconsoleprint("@@WHITE@@")
     key = rconsoleinput("")
-    if key == "legoman" then
+    if key == "legosex" then
         rconsoleinfo("Login success, welcome to pacman")
         rconsolename("pacman | home")
-        -- Set up command bar
-        while true do
-            rconsoleprint("> ")
-            cmd = rconsoleinput("")
-            if cmd == "foo" then
-                rconsoleinfo("bar")
-            elseif cmd == "clear" then
-                rconsoleclear()
-            else
-                rconsoleerr("Unknown command")
-                end
-            end
-        end
     else
-        rconsoleerr("Invalid key.")
+        rconsoleerror("Login failed, invalid key")
     end
-end
 
 if syn then
     print("pacman: You are on Synapse. Calling main()")

@@ -1,1 +1,1 @@
-You shouldn't be here. Are you looking for https://cubics.tk/pacman-FE/source?
+fully open sourced mayhem.
