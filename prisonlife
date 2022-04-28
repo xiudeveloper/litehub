@@ -9,18 +9,18 @@ local start = serv:Channel("start")
 local main = serv:Channel("main")
 
 start:Button("Join Discord", function()
-    game:OpenURL("https://discord.gg/mHFPA9erS5")
+    print("https://discord.gg/mHFPA9erS5")
 end)
 
 start:Label("made by obamium#6817")
 
 main:Button("Arrest All", function()
-    local Player = game.Players.LocalPlayer
-    rconsoleinfo("Player ignored: " .. Player)
+wait(0.1)
+local Player = game.Players.LocalPlayer
 local cpos = Player.Character.HumanoidRootPart.CFrame
 for i,v in pairs(game.Teams.Criminals:GetPlayers()) do
 if v.Name ~= Player.Name then
-rconsoleinfo("Arrested "..v.Name)
+rconsoleinfo("Arresting " .. v.Name)
 local i = 10
     repeat
     wait()
@@ -28,7 +28,6 @@ local i = 10
     game.Workspace.Remote.arrest:InvokeServer(v.Character.HumanoidRootPart)
     Player.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1)
     until i == 0
-end
-end
-Player.Character.HumanoidRootPart.CFrame = cpos
+        end
+    end
 end)
