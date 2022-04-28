@@ -61,5 +61,4 @@ elseif Krnl then
 else
     rconsoleerr("Lite refused to load, unsupported exploit")
     rconsoleerr("Please use Synapse X or Krnl")
-    end
 end

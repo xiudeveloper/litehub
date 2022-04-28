@@ -31,3 +31,12 @@ local i = 10
         end
     end
 end)
+
+main:Button("Give all weapons", function()
+wait(0.1)
+  local Weapon = {"AK-47"}
+for i,v in pairs(workspace.Prison_ITEMS.giver:GetChildren()) do
+if v.Name == Weapon[1] then
+local lol = workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+end
+end)
