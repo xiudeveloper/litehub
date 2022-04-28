@@ -8,7 +8,8 @@ function login()
  | | [  | | | / /__\\ 
  | |  | | | |,| \__., 
 [___][___]\__/ '.__.' 
-                      ]])
+                      
+]])
     rconsolename("lite | login")
     if syn then
         rconsoleinfo("Running on Synapse X")
@@ -23,20 +24,19 @@ function login()
         writefile("lite.config", "-- Lite Hub config\n-- Auto generated when you enter your key\n\nKEY=litebeta")
         rconsoleinfo("Welcome to Lite, " .. game.Players.LocalPlayer.Name .. "!")
         rconsolename("lite | home")
-    elseif isvalid("lite.config") then
+    elseif isfile("lite.config") then
         local contents = readfile("lite.config")
             if contents == "-- Lite Hub config\n-- Auto generated when you enter your key\n\nKEY=litebeta" then
                 rconsoleinfo("Valid config file found")
                 rconsoleinfo("Welcome to Lite, " .. game.Players.LocalPlayer.Name .. "!")
                 rconsolename("lite | home")
             else
-                rconsoleerr("Invalid config file")
+                rconsoleerr("Invalid config file, please go to your workspace folder and delete the file 'lite.config'")
             end
+            else
+                rconsoleerr("Invalid key!")
         end
-    else
-        rconsoleerr("Login failed, invalid key")
     end
-end
 
 if syn then
     print("lite: You are on Synapse. Calling main()")
