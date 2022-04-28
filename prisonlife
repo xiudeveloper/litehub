@@ -39,4 +39,5 @@ for i,v in pairs(workspace.Prison_ITEMS.giver:GetChildren()) do
 if v.Name == Weapon[1] then
 local lol = workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
 end
+end
 end)
