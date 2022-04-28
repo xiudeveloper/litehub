@@ -25,6 +25,7 @@ function main()
     else
         rconsoleerror("Login failed, invalid key")
     end
+end
 
 if syn then
     print("pacman: You are on Synapse. Calling main()")
