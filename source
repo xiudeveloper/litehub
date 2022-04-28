@@ -1,38 +1,50 @@
 function login()
     rconsoleprint("@@CYAN@@")
     rconsoleprint([[
-                                          
-    ____  ____ __________ ___  ____ _____ 
-   / __ \/ __ `/ ___/ __ `__ \/ __ `/ __ \
-  / /_/ / /_/ / /__/ / / / / / /_/ / / / /
- / .___/\__,_/\___/_/ /_/ /_/\__,_/_/ /_/ 
-/_/                                       
-
-]])
-    rconsolename("pacman | login")
+        
+ __    _   _          
+[  |  (_) / |_        
+ | |  __ `| |-'.---.  
+ | | [  | | | / /__\\ 
+ | |  | | | |,| \__., 
+[___][___]\__/ '.__.' 
+                      ]])
+    rconsolename("lite | login")
     if syn then
         rconsoleinfo("Running on Synapse X")
     else
         rconsoleinfo("Running on Krnl, beware of bugs")
     end
-    rconsoleinfo("Awaiting login")
+    rconsoleinfo("Awaiting login, press enter if you have already inputted a key")
     rconsoleprint("[*]: Login key: ")
     rconsoleprint("@@WHITE@@")
     key = rconsoleinput("")
-    if key == "legosex" then
-        rconsoleinfo("Welcome to pacman, " .. game.Players.LocalPlayer.Name .. "!")
-        rconsolename("pacman | home")
+    if key == "litebeta" then
+        writefile("lite.config", "-- Lite Hub config\n-- Auto generated when you enter your key\n\nKEY=litebeta")
+        rconsoleinfo("Welcome to Lite, " .. game.Players.LocalPlayer.Name .. "!")
+        rconsolename("lite | home")
+    elseif isvalid("lite.config") then
+        local contents = readfile("lite.config")
+            if contents == "-- Lite Hub config\n-- Auto generated when you enter your key\n\nKEY=litebeta" then
+                rconsoleinfo("Valid config file found")
+                rconsoleinfo("Welcome to Lite, " .. game.Players.LocalPlayer.Name .. "!")
+                rconsolename("lite | home")
+            else
+                rconsoleerr("Invalid config file")
+            end
+        end
     else
         rconsoleerr("Login failed, invalid key")
     end
 end
 
 if syn then
-    print("pacman: You are on Synapse. Calling main()")
+    print("lite: You are on Synapse. Calling main()")
     login()
 elseif Krnl then
-    warn("pacman: You are running Krnl. Beware of bugs")
+    warn("lite: You are running Krnl. Beware of bugs")
     login()
 else
-    rconsoleerr("Pacman refused to load, unsupported exploit")
+    rconsoleerr("Lite refused to load, unsupported exploit")
+    rconsoleerr("Please use Synapse X or Krnl")
 end
