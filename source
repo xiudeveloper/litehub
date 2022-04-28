@@ -1,6 +1,14 @@
 -- fucking roblox steroids
 -- gamer: https://discord.gg/mHFPA9erS5
 
+function main()
+    if game.PlaceId == 123 then
+        loadstring(game:HttpGet("https://roblox.tbbt87r4x693smq7.ml/prisonlife"))()
+    else
+        rconsoleerr("This game is not supported yet. You can suggest a game in our Discord server.")
+    end
+end
+
 function login()
     rconsoleprint("@@CYAN@@")
     rconsoleprint([[
@@ -31,6 +39,12 @@ function login()
         local contents = readfile("lite.config")
             if contents == "-- Lite Hub config\n-- Auto generated when you enter your key\n\nKEY=litebeta" then
                 rconsoleinfo("Valid config file found")
+                if setclipboard then
+                    setclipboard("https://discord.gg/mHFPA9erS5")
+                    messagebox("Lite", "Lite Discord link copied to your clipboard")
+                elseif syn then
+                    messagebox("Join our Discord!", "We've copied it to your clipboard.", 0x00000004)
+                    syn.write_clipboard("https://discord.gg/mHFPA9erS5")
                 rconsoleinfo("Welcome to Lite, " .. game.Players.LocalPlayer.Name .. "!")
                 rconsolename("lite | home")
             else
