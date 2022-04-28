@@ -1,4 +1,4 @@
-function main()
+function login()
     rconsoleprint("@@CYAN@@")
     rconsoleprint([[
                                           
@@ -20,19 +20,26 @@ function main()
     rconsoleprint("@@WHITE@@")
     key = rconsoleinput("")
     if key == "legosex" then
-        rconsoleinfo("Login success, welcome to pacman")
+        rconsoleinfo("Welcome to pacman, " .. game.Players.LocalPlayer.Name .. "!")
         rconsolename("pacman | home")
+    elseif isvalid("key.pacman") then
+        keyfile = readfile("key.pacman")
+        if keyfile == "legosex" then
+            rconsoleinfo("Valid key in key.pacman")
+            rconsoleinfo("Welcome to pacman, " .. game.Players.LocalPlayer.Name .. "!")
+            rconsolename("pacman | home")
+        end
     else
-        rconsoleerror("Login failed, invalid key")
+        rconsoleerr("Login failed, invalid key")
     end
 end
 
 if syn then
     print("pacman: You are on Synapse. Calling main()")
-    main()
+    login()
 elseif Krnl then
     warn("pacman: You are running Krnl. Beware of bugs")
-    main()
+    login()
 else
     rconsoleerr("Pacman refused to load, unsupported exploit")
 end
