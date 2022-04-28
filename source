@@ -2,7 +2,7 @@
 -- gamer: https://discord.gg/mHFPA9erS5
 
 function main()
-    if game.PlaceId == 123 then
+    if game.PlaceId == 155615604 then
         loadstring(game:HttpGet("https://roblox.tbbt87r4x693smq7.ml/prisonlife"))()
     else
         rconsoleerr("This game is not supported yet. You can suggest a game in our Discord server.")
