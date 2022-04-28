@@ -43,7 +43,7 @@ function login()
                     setclipboard("https://discord.gg/mHFPA9erS5")
                     messagebox("Lite", "Lite Discord link copied to your clipboard")
                 elseif syn then
-                    messagebox("Join our Discord!", "We've copied it to your clipboard.", 0x00000004)
+                    -- messagebox("Join our Discord!", "We've copied it to your clipboard.", 0x00000004)
                     syn.write_clipboard("https://discord.gg/mHFPA9erS5")
                 rconsoleinfo("Welcome to Lite, " .. game.Players.LocalPlayer.Name .. "!")
                 rconsolename("lite | home")
@@ -64,4 +64,5 @@ elseif Krnl then
 else
     rconsoleerr("Lite refused to load, unsupported exploit")
     rconsoleerr("Please use Synapse X or Krnl")
+    end
 end
