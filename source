@@ -22,13 +22,6 @@ function login()
     if key == "legosex" then
         rconsoleinfo("Welcome to pacman, " .. game.Players.LocalPlayer.Name .. "!")
         rconsolename("pacman | home")
-    elseif isvalid("key.pacman") then
-        keyfile = readfile("key.pacman")
-        if keyfile == "legosex" then
-            rconsoleinfo("Valid key in key.pacman")
-            rconsoleinfo("Welcome to pacman, " .. game.Players.LocalPlayer.Name .. "!")
-            rconsolename("pacman | home")
-        end
     else
         rconsoleerr("Login failed, invalid key")
     end
