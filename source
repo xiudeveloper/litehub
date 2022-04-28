@@ -19,7 +19,7 @@ function main()
     rconsoleprint("[*]: Login key: ")
     rconsoleprint("@@WHITE@@")
     key = rconsoleinput("")
-    if key == "speed" then
+    if key == "legoman" then
         rconsoleinfo("Login success, welcome to pacman")
         rconsolename("pacman | home")
         -- Set up command bar
@@ -30,10 +30,6 @@ function main()
                 rconsoleinfo("bar")
             elseif cmd == "clear" then
                 rconsoleclear()
-            elseif cmd == "exit" then
-                rconsoleinfo("Bye!")
-                rconsolewarn("Do not close the window, it will close your Roblox.")
-                break
             else
                 rconsoleerr("Unknown command")
                 end
