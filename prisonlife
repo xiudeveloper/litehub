@@ -9,7 +9,8 @@ local start = serv:Channel("start")
 local main = serv:Channel("main")
 
 start:Button("Join Discord", function()
-    print("https://discord.gg/mHFPA9erS5")
+  DiscordLib:Notify("Lite", "Please check your console", "Okay")
+  rconsoleinfo("https://discord.gg/mHFPA9erS5")
 end)
 
 start:Label("made by obamium#6817")
@@ -54,5 +55,5 @@ if v.Name == Weapon[1] then
 local lol = workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
 end
 end
-DiscordLib:Notification("Lite", "Gave all weapons successfully")
+DiscordLib:Notification("Lite", "Gave all weapons successfully", "Dismiss")
 end)
