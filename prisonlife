@@ -54,4 +54,5 @@ if v.Name == Weapon[1] then
 local lol = workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
 end
 end
+DiscordLib:Notification("Lite", "Gave all weapons successfully")
 end)
